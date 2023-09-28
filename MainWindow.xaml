@@ -1,0 +1,242 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="RemoteErrorDisplay.MainWindow"
+    ResizeMode="NoResize"
+    Title="Remote Error Display"
+    WindowStyle="None"
+    AllowsTransparency="True"
+    Background="{x:Null}"
+    Loaded="MainWindow_OnLoaded"
+    Closed="MainWindow_OnClosed"
+    d:DesignWidth="1400"
+    ShowInTaskbar="False"
+    Initialized="MainWindow_OnInitialized"
+    IsHitTestVisible="False"
+    Height="855">
+    <Border
+        x:Name="BorderDisplay"
+        BorderBrush="Blue"
+        Background="#FFE2E5FD"
+        BorderThickness="5"
+        CornerRadius="10">
+        <Grid
+            x:Name="GridMain">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="40*" />
+                <ColumnDefinition
+                    Width="193*" />
+                <ColumnDefinition
+                    Width="193*" />
+                <ColumnDefinition
+                    Width="193*" />
+                <ColumnDefinition
+                    Width="193*" />
+                <ColumnDefinition
+                    Width="193*" />
+                <ColumnDefinition
+                    Width="193*" />
+                <ColumnDefinition
+                    Width="40*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Column="3"
+                TextAlignment="Right"
+                TextWrapping="Wrap"
+                Text="Time: "
+                Margin="0,12,0,0"
+                FontSize="32"
+                FontWeight="Bold"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Width="207" />
+            <TextBlock
+                x:Name="TextBlockTime"
+                Grid.Column="4"
+                Margin="5,12,0,0"
+                FontSize="32"
+                FontWeight="Bold"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Width="173"
+                Height="43" />
+            <TextBlock
+                Grid.Column="3"
+                TextAlignment="Right"
+                Text="Date: "
+                Margin="5,49,0,0"
+                FontSize="32"
+                FontWeight="Bold"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Width="202" />
+            <TextBlock
+                TextAlignment="Right "
+                Text="Count: "
+                Margin="0,91,0,0"
+                FontSize="32"
+                HorizontalAlignment="Right"
+                Width="207"
+                FontWeight="Bold"
+                Grid.Column="3"
+                VerticalAlignment="Top" />
+            <TextBlock
+                x:Name="TextBlockDate"
+                Grid.Column="4"
+                Margin="5,49,0,0"
+                FontSize="32"
+                FontWeight="Bold"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Height="43" />
+            <TextBlock
+                x:Name="TextBlockCount"
+                Grid.Column="4"
+                Margin="5,91,0,0"
+                FontSize="32"
+                FontWeight="Bold"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Height="43" />
+            <DataGrid
+                x:Name="DataGrid1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Margin="0,140,0,0"
+                AutoGenerateColumns="False"
+                IsSynchronizedWithCurrentItem="True"
+                IsReadOnly="True"
+                RowHeaderWidth="0"
+                FontSize="24"
+                BorderBrush="#FF000000"
+                BorderThickness="4"
+                VerticalScrollBarVisibility="Hidden"
+                Visibility="Hidden"
+                Height="586"
+                VerticalAlignment="Top">
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Header="Parameter"
+                        Binding="{Binding Parameter}"
+                        Width="280"
+                        CanUserResize="False"
+                        CanUserReorder="False"
+                        FontSize="18"/>
+                    <DataGridTextColumn
+                        Header="Reading"
+                        Binding="{Binding Measurement}"
+                        Width="200*"
+                        CanUserResize="False"
+                        CanUserReorder="False"
+                        FontSize="18" />
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <DataGrid
+                x:Name="DataGrid2"
+                Grid.Column="3"
+                Grid.ColumnSpan="2"
+                Margin="0,140,0,0"
+                Height="586"
+                AutoGenerateColumns="False"
+                IsSynchronizedWithCurrentItem="True"
+                IsReadOnly="True"
+                RowHeaderWidth="0"
+                FontSize="24"
+                BorderBrush="#FF000000"
+                BorderThickness="4"
+                VerticalScrollBarVisibility="Hidden"
+                Visibility="Hidden"
+                VerticalAlignment="Top">
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Header="Parameter"
+                        Binding="{Binding Parameter}"
+                        Width="280"
+                        CanUserResize="False"
+                        CanUserReorder="False"
+                        FontSize="18" />
+                    <DataGridTextColumn
+                        Header="Reading"
+                        Binding="{Binding Measurement}"
+                        Width="200*"
+                        CanUserResize="False"
+                        CanUserReorder="False"
+                        FontSize="18" />
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <DataGrid
+                x:Name="DataGrid3"
+                Grid.Column="5"
+                Grid.ColumnSpan="2"
+                Margin="0,140,0,0"
+                Height="586"
+                AutoGenerateColumns="False"
+                IsSynchronizedWithCurrentItem="True"
+                IsReadOnly="True"
+                RowHeaderWidth="0"
+                FontSize="24"
+                BorderBrush="#FF000000"
+                BorderThickness="4"
+                VerticalScrollBarVisibility="Hidden"
+                Visibility="Hidden"
+                VerticalAlignment="Top">
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Header="Parameter"
+                        Binding="{Binding Parameter}"
+                        Width="280"
+                        CanUserResize="False"
+                        CanUserReorder="False"
+                        FontSize="18" />
+                    <DataGridTextColumn
+                        Header="Reading"
+                        Binding="{Binding Measurement}"
+                        Width="200*"
+                        CanUserResize="False"
+                        CanUserReorder="False"
+                        FontSize="18" />
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <TextBlock
+                x:Name="TextBlockMessage"
+                Grid.ColumnSpan="6"
+                Grid.Column="1"
+                Padding="0,5,0,0"
+                TextAlignment="Center"
+                Height="60"
+                Margin="0,757,0,0"
+                TextWrapping="Wrap"
+                VerticalAlignment="Top"
+                FontSize="36"
+                FontWeight="Bold" />
+            <TextBlock
+                TextAlignment="Right"
+                TextWrapping="Wrap"
+                Text="Part Type: "
+                Margin="0,12,4,0"
+                FontSize="24"
+                FontWeight="Bold"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Width="207"
+                Grid.Column="1" />
+            <TextBlock
+                x:Name="TextPartName"
+                Grid.Column="2"
+                Margin="7,12,0,0"
+                FontSize="24"
+                FontWeight="Bold"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Width="173"
+                Height="43" />
+        </Grid>
+    </Border>
+</Window>
